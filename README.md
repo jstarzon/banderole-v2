@@ -2,10 +2,12 @@
 This is a simple web app designed for counting stamps efficiently. It utilizes basic mathematical operations to simplify the counting process for end users in a clear and understandable manner, enhancing the user experience. With its straightforward interface, the app becomes more user-friendly and accessible to a wider range of users. With this app, you no longer need to waste time on complicated calculations. Just focus on your job and let the app handle the calculations seamlessly, allowing you to work more efficiently.
 
 ## Features
+
 - Count stamps easily using basic mathematical operations
-- Store stamp counts and results in a database
-- Utilize an API implemented in Python for data handling
-- Easy deployment script for setting up a PostgreSQL database
+
+- Store stamp counts and results in a database (optional)
+- Utilize an API implemented in Python for data handling (optional)
+- Easy deployment script for setting up a PostgreSQL database (optional)
 
 
 ## Available Scripts
