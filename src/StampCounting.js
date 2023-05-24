@@ -67,6 +67,7 @@ const StampCounting = () => {
     return Math.max(0, result);
   };
 
+ 
   const sendDataToDatabase = () => {
     // Check if any fields are empty or contain non-numerical values
     if (
@@ -148,6 +149,7 @@ const StampCounting = () => {
       });
   };
 
+
   const isSendButtonDisabled =
     pobrane === '' ||
     tacka === '' ||
@@ -169,6 +171,7 @@ const StampCounting = () => {
     isNaN(Number(jakosc)) ||
     isNaN(Number(maszyna)) ||
     isNaN(Number(inne));
+
 
       return (
     <Box p={4} >
@@ -257,7 +260,7 @@ const StampCounting = () => {
               />
 
 
-      <Button onPress={sendDataToDatabase} disabled={isSendButtonDisabled} >Wyslij dane</Button>
+      <Button onClick={sendDataToDatabase} disabled={isSendButtonDisabled} >Wyslij dane</Button>
 
       </Flex>
       <Box>
