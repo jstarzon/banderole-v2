@@ -11,7 +11,7 @@ const BackgroundWrapper = ({ children }) => {
           left={0}
           right={0}
           bottom={0}
-          backgroundImage={`url(${backgroundImage})`}
+          backgroundColor="gray.50"
           backgroundSize="cover"
           filter="blur(8px)" // Adjust the blur value as desired
           zIndex={-1}
