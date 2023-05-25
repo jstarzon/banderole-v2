@@ -175,7 +175,7 @@ const StampCounting = () => {
 
       return (
     <Box p={4}>
-      <Grid templateColumns="1fr 1fr" gap={4} justifyItems="center">
+      <Grid  gap={4} justifyItems="center">
         <Box>
           <Flex direction="column" alignItems="center" border="1px solid gray" p={6} bg="white" color="black">
             <Text textAlign="center">Kalkulator Banderol</Text>
