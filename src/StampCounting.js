@@ -1,5 +1,5 @@
-import React, { useState} from 'react';
-import { Box, Text, Input, Button, Stack,Grid,Flex } from '@chakra-ui/react';
+import React, { useState, useEffect } from 'react';
+import { Box, Text, Input, Button, Grid, Flex, Select } from '@chakra-ui/react';
 
 const StampCounting = () => {
   const placeholders = {
@@ -67,7 +67,7 @@ const StampCounting = () => {
     return Math.max(0, result);
   };
 
- 
+ // sendDataToDatabase is beta function works only if configured. (optional)
   const sendDataToDatabase = () => {
     // Check if any fields are empty or contain non-numerical values
     if (
@@ -174,9 +174,10 @@ const StampCounting = () => {
 
 
       return (
-    <Box p={4} >
-        <Grid  gap={4} justifyItems="center">
-          <Flex direction="column" alignItems="center" border="1px solid gray" p={4} bg="white" color="black">
+    <Box p={4}>
+      <Grid templateColumns="1fr 1fr" gap={4} justifyItems="center">
+        <Box>
+          <Flex direction="column" alignItems="center" border="1px solid gray" p={6} bg="white" color="black">
             <Text textAlign="center">Kalkulator Banderol</Text>
               <Input
                 value={pobrane}
@@ -254,26 +255,37 @@ const StampCounting = () => {
                 value={inne}
                 placeholder={placeholders.inne}
                 onChange={(event) => handleInputChange(event, setInne)}
-                
+                p={6}
                 size="md"
                 mb={2}
               />
+             {/*<Button onClick={sendDataToDatabase} disabled={isSendButtonDisabled}>
+              Wyslij dane
+            </Button> This is work in progress feature works only with API connected*}*/}
+            </Flex>
+      
 
-
-      <Button onClick={sendDataToDatabase} disabled={isSendButtonDisabled} >Wyslij dane</Button>
-
-      </Flex>
       <Box>
-          <Box p={4} borderRadius="md" mb={5} fontWeight="bold" justifyItems="left" style={{ color: calculateBanderole() < 0 ? 'red' : 'green' }} bg='white'>
+          <Box
+            p={4}
+            borderRadius="md"
+            mb={5}
+            fontWeight="bold"
+            textAlign="left"
+            color={calculateBanderole() < 0 ? 'red' : 'green'}
+            bg="white"
+          >
             STRATA/ZYSK: {calculateBanderole()}
           </Box>
-          <Box p={4} borderRadius="md" fontWeight="bold" color="green" bg='white'>
+          <Box p={4} borderRadius="md" fontWeight="bold" color="green" bg="white">
             TOK: {calculateTOK()}
           </Box>
-      </Box>
-
+          
+        </Box>
+        
+        </Box>
       </Grid>
-
+      
     </Box>
   );
 };
