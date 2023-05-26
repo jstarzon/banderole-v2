@@ -7,7 +7,7 @@ This is a simple web app designed for counting stamps efficiently. It utilizes b
 - Store stamp counts and results in a database (optional)
 - Utilize an API implemented in Python for data handling (optional)
 - Easy deployment script for setting up a PostgreSQL database (optional)
-## Preview
+## Preview hosted and deployed in AWS 
 
 Link:
 https://main.d2gp52wny4e7gd.amplifyapp.com/?fbclid=IwAR3bsn2aiX-pxh9er3ACTG-hncanw_ic6c4hljBY85NBakDUCNIs4iaut_A
