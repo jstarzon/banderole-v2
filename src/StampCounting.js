@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Text, Input, Button, Grid, Flex, Select } from '@chakra-ui/react';
+import React, { useState} from 'react';
+import { Box, Text, Input, Button, Grid,Flex } from '@chakra-ui/react';
 
 const StampCounting = () => {
   const placeholders = {
-    pobrane: 'Pobrane Banderole',
+    pobrane: 'TOK + Pobrane',
     produkcja: 'Produkcja',
     tacka: 'Tacka',
     reszta: 'Reszta',
@@ -67,7 +67,7 @@ const StampCounting = () => {
     return Math.max(0, result);
   };
 
- // sendDataToDatabase is beta function works only if configured. (optional)
+ 
   const sendDataToDatabase = () => {
     // Check if any fields are empty or contain non-numerical values
     if (
@@ -174,19 +174,19 @@ const StampCounting = () => {
 
 
       return (
-    <Box p={4}>
-      <Grid  gap={4} justifyItems="center">
-        <Box>
-          <Flex direction="column" alignItems="center" border="1px solid gray" p={6} bg="white" color="black">
-            <Text textAlign="center">Kalkulator Banderol</Text>
+    <Box p={4} >
+        <Grid  gap={4} justifyItems="center">
+          <Flex direction="column" alignItems="center" border="1px solid gray" p={4} bg="white" color="black">
+              <Text textAlign="left">Pobrane banderole</Text>
               <Input
                 value={pobrane}
                 placeholder={placeholders.pobrane}
                 onChange={(event) => handleInputChange(event, setPobrane)}
                 
                 size="md"
-                mb={10}
+                mb={5}
               />
+              <Text textAlign="left">Produkcja</Text>
               <Input
                 value={produkcja}
                 placeholder={placeholders.produkcja}
@@ -195,6 +195,7 @@ const StampCounting = () => {
                 size="md"
                 mb={2}
               />
+              <Text textAlign="center">Tacka</Text>
               <Input
                 value={tacka}
                 placeholder={placeholders.tacka}
@@ -203,6 +204,7 @@ const StampCounting = () => {
                 size="md"
                 mb={2}
               />
+              <Text textAlign="center">Reszta</Text>
               <Input
                 value={reszta}
                 placeholder={placeholders.reszta}
@@ -211,14 +213,16 @@ const StampCounting = () => {
                 size="md"
                 mb={2}
               />
+              <Text textAlign="center">Maszyna</Text>
               <Input
                 value={maszyna}
                 placeholder={placeholders.maszyna}
                 onChange={(event) => handleInputChange(event, setMaszyna)}
                 
                 size="md"
-                mb={10}
+                mb={5}
               />
+              <Text textAlign="center">Niepełne Arkusze</Text>
               <Input
                 value={niepelneark}
                 placeholder={placeholders.niepelneark}
@@ -227,14 +231,16 @@ const StampCounting = () => {
                 size="md"
                 mb={2}
               />
+              <Text textAlign="center">Niepełne Palety</Text>
               <Input
                 value={niepelnepal}
                 placeholder={placeholders.niepelnepal}
                 onChange={(event) => handleInputChange(event, setNiepelnePal)}
                 
                 size="md"
-                mb={10}
+                mb={5}
               />
+              <Text textAlign="center">Arkusze</Text>
               <Input
                 value={arkusze}
                 placeholder={placeholders.arkusze}
@@ -243,49 +249,39 @@ const StampCounting = () => {
                 size="md"
                 mb={2}
               />
+              <Text textAlign="center">Jakosc</Text>
               <Input
                 value={jakosc}
                 placeholder={placeholders.jakosc}
                 onChange={(event) => handleInputChange(event, setJakosc)}
                 
                 size="md"
-                mb={10}
+                mb={5}
               />
+              <Text textAlign="center">Inne</Text>
               <Input
                 value={inne}
                 placeholder={placeholders.inne}
                 onChange={(event) => handleInputChange(event, setInne)}
-                p={6}
+                
                 size="md"
                 mb={2}
               />
-             {/*<Button onClick={sendDataToDatabase} disabled={isSendButtonDisabled}>
-              Wyslij dane
-            </Button> This is work in progress feature works only with API connected*}*/}
-            </Flex>
-      
 
+
+      {/*<<Button onClick={sendDataToDatabase} disabled={isSendButtonDisabled} >Wyslij dane</Button>*}*/}
+      </Flex>
       <Box>
-          <Box
-            p={4}
-            borderRadius="md"
-            mb={5}
-            fontWeight="bold"
-            textAlign="left"
-            color={calculateBanderole() < 0 ? 'red' : 'green'}
-            bg="white"
-          >
+          <Box p={4} borderRadius="md" mb={5} fontWeight="bold" justifyItems="left" style={{ color: calculateBanderole() < 0 ? 'red' : 'green' }} bg='white'>
             STRATA/ZYSK: {calculateBanderole()}
           </Box>
-          <Box p={4} borderRadius="md" fontWeight="bold" color="green" bg="white">
+          <Box p={4} borderRadius="md" fontWeight="bold" color="green" bg='white'>
             TOK: {calculateTOK()}
           </Box>
-          
-        </Box>
-        
-        </Box>
+      </Box>
+
       </Grid>
-      
+
     </Box>
   );
 };

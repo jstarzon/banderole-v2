@@ -6,6 +6,26 @@ import { Box} from '@chakra-ui/react';
 import { extendTheme} from "@chakra-ui/react"
 import { ChakraProvider } from '@chakra-ui/react'
 import TableData from './TableData';
+import Dashboard from './Dashboard';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+const App = () => {
+  return (
+    <div>
+      <ChakraProvider theme={theme}>
+        <BackgroundWrapper>
+          <Router>
+            <Routes>
+              <Route path="/" element={<StampCounting />} />
+              <Route path="/table" element={<TableData />} />
+              <Route path="/admin" element={<Dashboard />} />
+            </Routes>
+          </Router>
+        </BackgroundWrapper>
+      </ChakraProvider>
+    </div>
+  );
+};
 
 const theme = extendTheme({
   colors: {
@@ -15,21 +35,5 @@ const theme = extendTheme({
     
   },
 });
-
-const App = () => {
-
-  return (    
-    <div>
-    <ChakraProvider theme={theme} >
-      <BackgroundWrapper>
-        <Box>
-          <StampCounting></StampCounting>
-          {/*<TableData></TableData> This is work in progress feature works only with API connected*}*/}
-        </Box>
-      </BackgroundWrapper>
-    </ChakraProvider>
-  </div>
-  );
-};
 
 export default App;
