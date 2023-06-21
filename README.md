@@ -10,7 +10,7 @@ This is a simple web app designed for counting stamps efficiently. It utilizes b
 ## Preview hosted and deployed in AWS 
 
 Link:
-https://main.d2gp52wny4e7gd.amplifyapp.com/?fbclid=IwAR3bsn2aiX-pxh9er3ACTG-hncanw_ic6c4hljBY85NBakDUCNIs4iaut_A
+https://main.d9rnlegrs728v.amplifyapp.com
 
 ## Available Scripts
 
