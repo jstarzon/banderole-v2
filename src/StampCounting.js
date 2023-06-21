@@ -191,7 +191,7 @@ const StampCounting = () => {
 <Box p={4}>
     {/* Column 1 */}
     <TableContainer>
-      <Table variant='striped' colorScheme='teal'>
+      <Table variant='simple'>
         <TableCaption>Kalkulator Banderol</TableCaption>
         <Thead>
           <Tr>
