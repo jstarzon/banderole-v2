@@ -1,8 +1,21 @@
 import React, { useState} from 'react';
 import { Box, Text, Input, Button, Grid,Flex } from '@chakra-ui/react';
-import { TableContainer, Table, Tbody, Tr, Td, Th, Thead, TableCaption } from '@chakra-ui/react';
-
+import {
+  Container,
+  IconButton,
+  Spacer,
+  Table,
+  TableContainer,
+  TableCaption,
+  Tbody,
+  Td,
+  Tfoot,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
 const StampCounting = () => {
+
   const placeholders = {
     wtok:'TOK',
     pobrane: 'Pobrane banderole',
@@ -27,7 +40,6 @@ const StampCounting = () => {
   const [jakosc, setJakosc] = useState('');
   const [maszyna, setMaszyna] = useState('');
   const [inne, setInne] = useState('');
-
   const handleInputChange = (event, setState) => {
     const value = event.target.value;
     const numericValue = value.replace(/[^0-9]/g, ''); // Remove non-numeric characters
@@ -184,120 +196,153 @@ const StampCounting = () => {
 
 
       return (
-
-
-
-
-<Box p={4}>
-    {/* Column 1 */}
-    <TableContainer>
-      <Table variant='simple'>
-        <TableCaption>     
+        <Container maxW="container.sm" my={{ base: 0, md: 8 }}>
+        <Flex alignItems="center">
+          <Box fontStyle="italic" fontWeight="bold">
+            Kalkulator Banderol
+          </Box>
+          <Spacer />
+          <Button as="a" href="/your-link" colorScheme="red" size="sm">
+            Jak liczyć banderole?
+          </Button>
+        </Flex>
+        <TableContainer>
+          <Table size="sm" overflow="auto">
+            <TableCaption>
               <Text>Wynik:</Text>
-              <Text fontWeight="bold" style={{ color: calculateBanderole() < 0 ? 'red' : 'green' }}>STRATA/ZYSK: {calculateBanderole()}</Text>
+              <Text
+                fontWeight="bold"
+                style={{ color: calculateBanderole() < 0 ? 'red' : 'green' }}
+              >
+                STRATA/ZYSK: {calculateBanderole()}
+              </Text>
               <Text>TOK: {calculateTOK()}</Text>
-        </TableCaption>
-        <Thead>
-          <Tr>
-            <Th isNumeric>TOK</Th>
-            <Td><Input
-              value={wtok}
-              placeholder={placeholders.wtok}
-              onChange={(event) => handleInputChange(event, setWtok)}
-            /></Td>
-          </Tr>
-          <Tr>
-            <Th isNumeric>Pobrane</Th>
-            <Td><Input
-              value={pobrane}
-              placeholder={placeholders.pobrane}
-              onChange={(event) => handleInputChange(event, setPobrane)}
-            /></Td>
-          </Tr>
-          <Tr>
-            <Th isNumeric>Produkcja</Th>
-            <Td><Input
-              value={produkcja}
-              placeholder={placeholders.produkcja}
-              onChange={(event) => handleInputChange(event, setProdukcja)}
-            /></Td>
-          </Tr>
-          <Tr>
-            <Th isNumeric>Tacka</Th>
-            <Td><Input
-              value={tacka}
-              placeholder={placeholders.tacka}
-              onChange={(event) => handleInputChange(event, setTacka)}
-            /></Td>
-          </Tr>
-          <Tr>
-            <Th isNumeric>Reszta</Th>
-            <Td><Input
-              value={reszta}
-              placeholder={placeholders.reszta}
-              onChange={(event) => handleInputChange(event, setReszta)}
-            /></Td>
-          </Tr>
-        </Thead>
-
-        <Thead>
-          <Tr>
-            <Th isNumeric>Maszyna</Th>
-            <Td><Input
-              value={maszyna}
-              placeholder={placeholders.maszyna}
-              onChange={(event) => handleInputChange(event, setMaszyna)}
-            /></Td>
-          </Tr>
-          <Tr>
-            <Th isNumeric>Niepełne Arkusze</Th>
-            <Td><Input
-              value={niepelneark}
-              placeholder={placeholders.niepelneark}
-              onChange={(event) => handleInputChange(event, setNiepelneArk)}
-            /></Td>
-          </Tr>
-          <Tr>
-            <Th isNumeric>Niepełne Palety</Th>
-            <Td><Input
-              value={niepelnepal}
-              placeholder={placeholders.niepelnepal}
-              onChange={(event) => handleInputChange(event, setNiepelnePal)}
-            /></Td>
-          </Tr>
-          <Tr>
-            <Th isNumeric>Arkusze</Th>
-            <Td><Input
-              value={arkusze}
-              placeholder={placeholders.arkusze}
-              onChange={(event) => handleInputChange(event, setArkusze)}
-            /></Td>
-          </Tr>
-          <Tr>
-            <Th isNumeric>Jakosc</Th>
-            <Td><Input
-              value={jakosc}
-              placeholder={placeholders.jakosc}
-              onChange={(event) => handleInputChange(event, setJakosc)}
-            /></Td>
-          </Tr>
-          <Tr>
-            <Th isNumeric>Inne</Th>
-            <Td><Input
-              value={inne}
-              placeholder={placeholders.inne}
-              onChange={(event) => handleInputChange(event, setInne)}
-            /></Td>
-          </Tr>
-
-        </Thead>
-      </Table>
-    </TableContainer>
-
-
-
-
-</Box>
+            </TableCaption>
+            <Thead>
+              <Tr>
+                <Th isNumeric>TOK</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={wtok}
+                    placeholder={placeholders.wtok}
+                    onChange={(event) => handleInputChange(event, setWtok)}
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Th isNumeric>Pobrane</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={pobrane}
+                    placeholder={placeholders.pobrane}
+                    onChange={(event) => handleInputChange(event, setPobrane)}
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Th isNumeric>Produkcja</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={produkcja}
+                    placeholder={placeholders.produkcja}
+                    onChange={(event) =>
+                      handleInputChange(event, setProdukcja)
+                    }
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Th isNumeric>Tacka</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={tacka}
+                    placeholder={placeholders.tacka}
+                    onChange={(event) => handleInputChange(event, setTacka)}
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Th isNumeric>Reszta</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={reszta}
+                    placeholder={placeholders.reszta}
+                    onChange={(event) => handleInputChange(event, setReszta)}
+                  />
+                </Td>
+              </Tr>
+            </Thead>
+  
+            <Thead>
+              <Tr>
+                <Th isNumeric>Maszyna</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={maszyna}
+                    placeholder={placeholders.maszyna}
+                    onChange={(event) => handleInputChange(event, setMaszyna)}
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Th isNumeric>Niepełne Arkusze</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={niepelneark}
+                    placeholder={placeholders.niepelneark}
+                    onChange={(event) =>
+                      handleInputChange(event, setNiepelneArk)
+                    }
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Th isNumeric>Niepełne Palety</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={niepelnepal}
+                    placeholder={placeholders.niepelnepal}
+                    onChange={(event) =>
+                      handleInputChange(event, setNiepelnePal)
+                    }
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Th isNumeric>Arkusze</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={arkusze}
+                    placeholder={placeholders.arkusze}
+                    onChange={(event) => handleInputChange(event, setArkusze)}
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Th isNumeric>Jakosc</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={jakosc}
+                    placeholder={placeholders.jakosc}
+                    onChange={(event) => handleInputChange(event, setJakosc)}
+                  />
+                </Td>
+              </Tr>
+              <Tr>
+                <Th isNumeric>Inne</Th>
+                <Td>
+                  <Input focusBorderColor='red.300'
+                    value={inne}
+                    placeholder={placeholders.inne}
+                    onChange={(event) => handleInputChange(event, setInne)}
+                  />
+                </Td>
+              </Tr>
+            </Thead>
+            {/*<<Button onClick={sendDataToDatabase} disabled={isSendButtonDisabled} >Wyslij dane</Button>*}*/}
+          </Table>
+        </TableContainer>
+      </Container>
   );
 };
 export default StampCounting;
