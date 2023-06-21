@@ -191,16 +191,6 @@ const StampCounting = () => {
 <Box p={4}>
     {/* Column 1 */}
     <TableContainer>
-    <Table>
-      <Th fontWeight="bold" style={{ color: calculateBanderole() < 0 ? 'red' : 'green' }} bg='white'>
-        STRATA/ZYSK: {calculateBanderole()}
-      </Th>
-      <Td fontWeight="bold" color="green" bg='white'>
-        TOK: {calculateTOK()}
-      </Td>
-    </Table>
-    </TableContainer>
-    <TableContainer>
       <Table variant='striped' colorScheme='teal'>
         <TableCaption>Kalkulator Banderol</TableCaption>
         <Thead>
@@ -295,10 +285,15 @@ const StampCounting = () => {
               onChange={(event) => handleInputChange(event, setInne)}
             /></Td>
           </Tr>
+          <Tr>
+            <Th isNumeric fontWeight="bold" style={{ color: calculateBanderole() < 0 ? 'red' : 'green' }}>
+              <Text>STRATA/ZYSK: {calculateBanderole()}</Text>
+              <Text>TOK: {calculateTOK()}</Text>
+            </Th>
+          </Tr>
         </Thead>
       </Table>
     </TableContainer>
-
 
 
 
