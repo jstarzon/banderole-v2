@@ -17,6 +17,7 @@ create_table_sql = """
 CREATE TABLE banderole (
     id SERIAL PRIMARY KEY,
     datetime TIMESTAMP,
+    wtok INTEGER,
     pobrane INTEGER,
     tacka INTEGER,
     reszta INTEGER,

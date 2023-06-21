@@ -23,6 +23,7 @@ def handle_data():
         data = request.json
         
         # Extract data from the request
+        wtok = data.get('wtok')
         pobrane = data.get('pobrane')
         tacka = data.get('tacka')
         reszta = data.get('reszta')
@@ -47,7 +48,7 @@ def handle_data():
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         values = (
-            current_datetime, pobrane, tacka, reszta, produkcja, arkusze, niepelneark, niepelnepal, jakosc, maszyna, inne, tok, banderole
+            current_datetime,wtok, pobrane, tacka, reszta, produkcja, arkusze, niepelneark, niepelnepal, jakosc, maszyna, inne, tok, banderole
         )
         cursor.execute(insert_query, values)
         conn.commit()
