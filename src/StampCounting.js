@@ -202,7 +202,7 @@ const StampCounting = () => {
             Kalkulator Banderol OTP
           </Box>
           <Spacer />
-          <Button as="a" href="/your-link" colorScheme="orange" size="sm" bg={"#e5671e"}>
+          <Button as="a" href="/your-link" colorScheme="orange" size="sm">
             Jak liczyć banderole?
           </Button>
         </Flex>
