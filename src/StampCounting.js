@@ -199,7 +199,7 @@ const StampCounting = () => {
         <Container maxW="container.sm" my={{ base: 0, md: 8 }}>
         <Flex alignItems="center">
           <Box fontStyle="italic" fontWeight="bold">
-            Kalkulator Banderol
+            Kalkulator Banderol OTP
           </Box>
           <Spacer />
           <Button as="a" href="/your-link" colorScheme="orange" size="sm" bg={"#e5671e"}>
@@ -209,14 +209,15 @@ const StampCounting = () => {
         <TableContainer>
           <Table size="sm" overflow="auto">
             <TableCaption>
-              <Text>Wynik:</Text>
+              <Text fontSize={"20"}>Wynik:</Text>
               <Text
+                fontSize={"15"}
                 fontWeight="bold"
                 style={{ color: calculateBanderole() < 0 ? 'red' : 'green' }}
               >
                 STRATA/ZYSK: {calculateBanderole()}
               </Text>
-              <Text>TOK: {calculateTOK()}</Text>
+              <Text fontSize={"15"}>TOK: {calculateTOK()}</Text>
             </TableCaption>
             <Thead>
               <Tr>
