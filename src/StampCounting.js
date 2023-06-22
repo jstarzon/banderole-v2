@@ -202,7 +202,7 @@ const StampCounting = () => {
             Kalkulator Banderol
           </Box>
           <Spacer />
-          <Button as="a" href="/your-link" colorScheme="red" size="sm">
+          <Button as="a" href="/your-link" colorScheme="orange" size="sm" bg={"#e5671e"}>
             Jak liczyć banderole?
           </Button>
         </Flex>
@@ -222,7 +222,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>TOK</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={wtok}
                     placeholder={placeholders.wtok}
                     onChange={(event) => handleInputChange(event, setWtok)}
@@ -232,7 +232,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Pobrane</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={pobrane}
                     placeholder={placeholders.pobrane}
                     onChange={(event) => handleInputChange(event, setPobrane)}
@@ -242,7 +242,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Produkcja</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={produkcja}
                     placeholder={placeholders.produkcja}
                     onChange={(event) =>
@@ -254,7 +254,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Tacka</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={tacka}
                     placeholder={placeholders.tacka}
                     onChange={(event) => handleInputChange(event, setTacka)}
@@ -264,7 +264,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Reszta</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={reszta}
                     placeholder={placeholders.reszta}
                     onChange={(event) => handleInputChange(event, setReszta)}
@@ -277,7 +277,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Maszyna</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={maszyna}
                     placeholder={placeholders.maszyna}
                     onChange={(event) => handleInputChange(event, setMaszyna)}
@@ -287,7 +287,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Niepełne Arkusze</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={niepelneark}
                     placeholder={placeholders.niepelneark}
                     onChange={(event) =>
@@ -299,7 +299,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Niepełne Palety</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={niepelnepal}
                     placeholder={placeholders.niepelnepal}
                     onChange={(event) =>
@@ -311,7 +311,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Arkusze</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={arkusze}
                     placeholder={placeholders.arkusze}
                     onChange={(event) => handleInputChange(event, setArkusze)}
@@ -321,7 +321,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Jakosc</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={jakosc}
                     placeholder={placeholders.jakosc}
                     onChange={(event) => handleInputChange(event, setJakosc)}
@@ -331,7 +331,7 @@ const StampCounting = () => {
               <Tr>
                 <Th isNumeric>Inne</Th>
                 <Td>
-                  <Input focusBorderColor='red.300'
+                  <Input focusBorderColor="#e5671e"
                     value={inne}
                     placeholder={placeholders.inne}
                     onChange={(event) => handleInputChange(event, setInne)}
